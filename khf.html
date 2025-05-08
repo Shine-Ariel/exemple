@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button Visibility</title>
+    <style>
+        #button2 {
+            visibility: hidden; /* Initially hide the second button */
+        }
+    </style>
+</head>
+<body>
+    <button id="button1">+</button>
+    <button id="button2">Show Button</button>
+
+    <script>
+        // Get both buttons
+        const button1 = document.getElementById('button1');
+        const button2 = document.getElementById('button2');
+
+        // Hide the first button and show the second button when button1 is clicked
+        button1.addEventListener('click', () => {
+            button1.style.visibility = 'hidden';
+            button2.style.visibility = 'visible';
+        });
+
+        // Show the first button and hide the second button when button2 is clicked
+        button2.addEventListener('click', () => {
+            button1.style.visibility = 'visible';
+            button2.style.visibility = 'hidden';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+    TD 2:
+Exercice 1:
+
+1) Ecrivons:
+Algorithme: Résolution des équations du 2e degré
+  Variable: (a, b, c: entiers; delta, X, x, x1, x2: nombre)
+Debut
+    Ecrire ("Entrez le coefficient a:")
+    Lire (a)
+    Ecrire ("Entrez le coefficient b:")
+    Lire (b)
+    Ecrire ("Entrez le coefficient c:")
+    Lire (c)
+    Si a = 0 ALORS
+        Si b = 0 ALORS
+            Si c = 0 ALORS
+                Ecrire "Les solutions sont infinies (tous les réels sont solutions)"
+            Sinon
+                Ecrire "Il n'y a pas de solution car (c ≠ 0 et a = b = 0)"
+            FinSi
+        Sinon
+            Ecrire "Il existe une solution unique"
+            X ppv -c/b
+            Ecrire "x = ", X
+        FinSi
+    Sinon
+        delta ppv b^2 - 4*a*c
+        Si delta > 0 ALORS
+            x1 ppv (-b + RACINE(delta)) / (2 * a)
+            x2 ppv (-b - RACINE(delta)) / (2 * a)
+            Ecrire "Il existe deux solutions : x1 = ", x1, ", x2 = ", x2
+        Sinon Si delta = 0 ALORS
+             x ppv -b / (2 * a)
+             Ecrire "Il existe une solution unique : x = ", x
+        Sinon
+            Ecrire "Il n'y a pas de solution réelle (delta < 0)"
+        FinSi
+    FinSi
+Fin
+
+2) Ecrivons:
+Algorithme: Résolution de N équations
+  Variable: (a, b, c, N: entiers; delta, X, x, x1, x2: nombre)
+Debut
+    Ecrire "Entrez le nombre d'équations N :"
+    Lire N
+    Tant que N > 1 Faire
+        Ecrire ("Entrez le coefficient a:")
+        Lire (a)
+        Ecrire ("Entrez le coefficient b:")
+        Lire (b)
+        Ecrire ("Entrez le coefficient c:")
+        Lire (c)
+        Si a = 0 ALORS
+            Si b = 0 ALORS
+                Si c = 0 ALORS
+                    Ecrire "Équation ", N, ": les solutions sont infinies (tous les réels sont solutions)"
+                Sinon
+                    Ecrire "Équation ", N, ": il n'y a pas de solution car (c ≠ 0 et a = b = 0)"
+                FinSi
+            Sinon
+                Ecrire "Équation ", N, ": il existe une solution unique"
+                X ppv -c/b
+                Ecrire "x = ", X
+            FinSi
+        Sinon
+            delta ppv b^2 - 4*a*c
+            Si delta > 0 ALORS
+                x1 ppv (-b + RACINE(delta)) / (2 * a)
+                x2 ppv (-b - RACINE(delta)) / (2 * a)
+                Ecrire "Équation ", N, ": il existe deux solutions : x1 = ", x1, ", x2 = ", x2
+            Sinon Si delta = 0 ALORS
+                x ppv -b / (2 * a)
+                Ecrire "Équation ", i, ": Solution unique : x = ", x
+            Sinon
+                Ecrire "Équation ", i, ": il n'y a pas de solution réelle (delta < 0)"
+            FinSi
+        FinSi
+        N ppv N-1
+    FinTantque
+Fin
+
+Exercice 2:
+
+Ecrivons:
+Debut
+    Ecrire ("Entrez la valeurs de X :")
+    Lire (X)
+    Ecrire ("Entrez la valeurs de Y :")
+    Lire (Y)
+    Si X ≥ 0 ET Y ≥ 0 ALORS
+        f ppv X^2 + Y^2
+    Sinon Si X < 0 ET Y < 0 ALORS
+        f ppv 1
+    Sinon
+        f ppv X
+    FinSi
+    Ecrire "La valeur de f(", X, ",", Y, ") est : ", f
+Fin
+
+Exemples:
+La valeur de f(2, 3) est : 13
+La valeur de f(1, -16) est : 1
+La valeur de f(-2, 2) est : -2
+
+Exercice 3:
+
+1)Ecrivons
+
+Algorithme: Division entière par soustraction successive
+    Variable: (A, B, reste, quotient: entier)
+Debut
+    Ecrire ("Entrez d eux entiers positifs A et B (B > 0) :")
+    Lire (A, B)
+    quotient ppv 0
+    reste ppv A
+    Tant que reste ≥ B Faire
+        reste ppv reste - B
+        quotient ppv quotient + 1
+    FinTantque
+    Ecrire "Le quotient de la division entière de ", A, " par ", B, " est : ", quotient
+    Ecrire "Le reste de la division entière de ", A, " par ", B, " est : ", reste
+Fin
+
+2)Démontrons
+Avec le quotient égal à 0 et le reste égale à 10. Avec la condition "Tant que reste ≥ B";
+reste garde toujours sa valeur car B = 0. Aveec celà, la condition est toujours vraie et
+la boucle ne s'arrête pas: la division par 0 ne peut pas etre définie dans ce cas.
+
+Exercice 4:
+
+Algorithme : Calcul du PGCD
+    Variable: (A, B: entiers)
+DEBUT
+    Ecrire ("Entrez un entier positif A:")
+    LIRE (A)
+    Ecrire ("Entrez un entier positif B:")
+    LIRE (B)
+    Si A = B ALORS
+        ECRIRE "Le PGCD de ces deux entiers est : ", A
+    Tant que A ≠ B Faire
+        SI A > B ALORS
+            A ppv A - B
+        SINON
+            B ppv B - A
+        FinSi
+    ECRIRE "Le PGCD de ces deux entiers est : ", A
+FIN
+
+    TD5:
+Exercice 1:
+
+1) Le résultat donne 25
+2)Reprenons:
+Algorithme Enigme
+ Fonction Somme_Carrées(X, Y, Z: Entier; S : Entier)
+Début
+        X ppv X * X
+        Y ppv Y * Y
+        Z ppv Z * Z
+        S ppv X + Y + Z
+Fin Fonction
+    Variable (X, Y, Z : Entier)
+Debut
+        Somme_Carrées (X, Y, Z)
+        Ecrire (X,Y, Z)
+Fin
+
+Exercice 2:
+Ecrivons:
+Algorithme: Calcul de la partie entière d'un nombre
+    Variable: (x: nombre)
+    FONCTION PartieEntiere(x : Réel)
+Debut
+    Ecrire("Entrez un nombre:")
+    Lire(x)
+    entier ppv 0
+    Tant que entier + 1 ≤ x FAIRE
+        entier <- entier + 1
+    FinTantque
+    Ecrire("La partie entière de ce nombre est:", entier)
+Fin Fonction
+
+    Variable (x: réel)
+Debut
+        PartieEntiere(x)
+Fin
+
+Exercice 3:
+FONCTION EstPair(n : ENTIER) : BOOLÉEN
+Debut
+    RETOURNER (n % 2 = 0)
+FIN
+
+PROCÉDURE SommeDeCinqPairs(a : ENTIER, b : ENTIER, c : ENTIER, d : ENTIER, e : ENTIER)
+    SI Non EstPair(a) ALORS
+        ECRIRE ("Erreur : ", a, " n'est pas pair.")
+        FIN
+    FIN SI
+    SI Non EstPair(b) ALORS
+        ÉCRIRE ("Erreur : ", b, " n'est pas pair.")
+        FIN
+    FIN SI
+    SI Non EstPair(c) ALORS
+        ÉCRIRE ("Erreur : ", c, " n'est pas pair.")
+        FIN
+    FIN SI
+    SI Non EstPair(d) ALORS
+        ÉCRIRE ("Erreur : ", d, " n'est pas pair.")
+        FIN
+    FIN SI
+    SI Non EstPair(e) ALORS
+        ÉCRIRE ("Erreur : ", e, " n'est pas pair.")
+        FIN
+    FIN SI
+    somme <- a + b + c + d + e
+    ÉCRIRE "La somme des cinq nombres pairs est : ", somme
+FIN PROCÉDURE
+
+    TD3:
+
+Exercice 1:n 
