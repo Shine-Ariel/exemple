@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disappearing Button</title>
+  <style>
+    /* CSS pour styliser le bouton */
+    #disappear-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    #disappear-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Bouton qui disparaît au clic -->
+  <button id="disappear-button">Click me to disappear</button>
+
+  <script>
+    // JavaScript pour gérer le clic
+    document.getElementById("disappear-button").addEventListener("click", function() {
+      this.style.opacity = "0"; // Animation de disparition
+      setTimeout(() => this.style.display = "none", 300); // Cache complètement après l'animation
+    });
+  </script>
+</body>
+</html>
